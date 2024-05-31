@@ -25,6 +25,6 @@
           ansible.builtin.set_fact:
             ah_token: "{{ ah_token['token'] }}"
 
-        - name: Call dispatch role
-          ansible.builtin.include_role:
-            name: infra.controller_configuration.dispatch
+    - name: Call dispatch role
+      ansible.builtin.include_role:
+        name: infra.controller_configuration.dispatch
