@@ -1,6 +1,6 @@
 ---
 - name: Get the Private Automation Hub Token
-  hosts: all
+  hosts: localhost
   connection: local
   vars_files:
     - ../vars/secrets.yml
