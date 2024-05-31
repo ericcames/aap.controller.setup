@@ -2,8 +2,13 @@
 - name: Get the Private Automation Hub Token
   hosts: localhost
   connection: local
-  vars_files:
-    - ../vars/secrets.yml
+
+  pre_tasks:
+    - name: Include vars from controller_configs directory
+      ansible.builtin.include_vars:
+        dir: ../vars
+        ignore_files: [controller_config.yml.template]
+        extensions: ["yml"]
 
   tasks:
     # probably not good but kinda works, looking for better solutions,
